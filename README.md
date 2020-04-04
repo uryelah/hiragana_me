@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Hiragana Transliterator
+
+A simple latin alphabet to hiragana webapp, WIP
+
+<img src='./public/screen00.png'>
+
 ## Available Scripts
 
 In the project directory, you can run:
