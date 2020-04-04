@@ -56,6 +56,7 @@
 
 .hiraganas {
   display: flex;
+  align-content: flex-start;
   flex-wrap: wrap;
   width: 700px;
   height: 600px;
@@ -83,9 +84,13 @@
   position: relative;
   background-color: white;
   transform-origin: center center;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.char:last-child {
   transform: scale(0);
   animation: 0.2s popUp cubic-bezier(0.23, 1, 0.320, 1) 1 forwards;
-  z-index: 1;
 }
 
 @keyframes popUp {

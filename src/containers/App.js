@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import hiragana from './helpers/hiragana';
-import Char from './Char';
+import hiragana from '../helpers/hiragana';
+import Characters from '../components/Characters';
+import ErrorBoundary from './ErrorBoundary';
 
 class App extends Component {
   constructor() {
@@ -76,17 +77,15 @@ class App extends Component {
 
   render() {
     return (
+      <ErrorBoundary>
       <div className="App">
         <main>
           <h1>Hiragana <span>transliterator</span></h1>
           <input className='cute-input' onChange={(e) => this.inputHandler(e)} type='text' value={this.state.latin}/>
-          <div className='hiraganas'>
-            {this.state.hiragana.map((char, i) => {
-              return <Char onClick={this.clickHandler} key={Math.random()} id={char[1] + char[2] + i} index={i} char={char[0]} reading={char[1]} end={char[2]}/>
-            })}
-          </div>
+          <Characters hiragana={this.state.hiragana} clickHandler={this.clickHandler} />
         </main>
       </div>
+      </ErrorBoundary>
     );
   }
 }
